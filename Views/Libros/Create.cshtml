@@ -1,0 +1,66 @@
+﻿@model proyectoCRUD.Models.Libro
+
+@{
+    ViewData["Title"] = "Crear nuevo libro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class = "container">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>CREAR NUEVO LIBRO</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <form method="post" asp-action="Create">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="Titulo" class="control-label"></label>
+                    <input asp-for="Titulo" class="form-control" />
+                    <span asp-validation-for="Titulo" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Descripcion" class="control-label"></label>
+                    <input asp-for="Descripcion" class="form-control" />
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="FechaPublicacion" class="control-label"></label>
+                    <input asp-for="FechaPublicacion" class="form-control" />
+                    <span asp-validation-for="FechaPublicacion" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Autor" class="control-label"></label>
+                    <input asp-for="Autor" class="form-control" />
+                    <span asp-validation-for="Autor" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PrecioLibro" class="custom-control-label"></label>
+                    <input asp-for="PrecioLibro" class="form-control" />
+                    <span asp-validation-for="PrecioLibro" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Crear libro" class="btn btn-primary"/>
+                </div>
+
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @{<partial name="_ValidationScriptsPartial" /> }
+}
+
